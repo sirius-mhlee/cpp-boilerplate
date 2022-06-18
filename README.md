@@ -1,1 +1,1 @@
-# cpp-boilerplate
+# C++ Boilerplate
