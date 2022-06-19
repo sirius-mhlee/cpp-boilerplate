@@ -1,4 +1,6 @@
-add_executable(app main.cpp func.cpp)
+set(APP_NAME "app")
 
-set_property(TARGET app PROPERTY CXX_STANDARD 20)
-set_property(TARGET app PROPERTY CXX_STANDARD_REQUIRED ON)
+add_executable(${APP_NAME} main.cpp func.cpp)
+
+set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD 20)
+set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
