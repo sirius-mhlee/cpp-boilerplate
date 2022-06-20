@@ -24,12 +24,16 @@ cmake -S . -B build -G Ninja
 
 ## Build
 
+> Need `Generate` step
+
 ```shell
 cd build
 cmake --build . --target all
 ```
 
 ## Test
+
+> Need `Generate`, `Build` step
 
 ```shell
 cd build
@@ -39,6 +43,8 @@ ctest -j2 --output-on-failure
 ![test_result.png](./example/test_result.png)
 
 ## Coverage
+
+> Need `Generate`, `Build`, `Test` step
 
 ``` shell
 cd build
