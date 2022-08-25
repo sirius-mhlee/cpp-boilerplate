@@ -5,13 +5,14 @@ C++ Boilerplate using CMake, Gcov, LCOV and GTest
 ## Requirement
 
 - CMake (3.16.3)
+- Boost (1.71.0)
 - g++/Gcov (9.4.0)
 - LCOV (1.14)
 - GTest (1.11.0)
 - Ninja (1.10.0)
 
 ```shell
-sudo apt install build-essential cmake ninja-build lcov
+sudo apt install build-essential libboost-all-dev cmake ninja-build lcov
 ```
 
 ## Generate
