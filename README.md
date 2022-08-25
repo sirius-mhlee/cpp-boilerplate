@@ -1,6 +1,6 @@
 # C++ Boilerplate
 
-C++ Boilerplate using CMake, Gcov, LCOV and GTest
+C++ Boilerplate using CMake, Boost, Gcov, LCOV and GTest
 
 ## Requirement
 
