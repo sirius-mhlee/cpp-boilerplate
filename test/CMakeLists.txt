@@ -1,8 +1,15 @@
 set(TEST_NAME "test1")
 
 add_executable(${TEST_NAME} ${TEST_NAME}.cpp ../app/func.cpp)
+
+target_include_directories(${TEST_NAME} PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(${TEST_NAME} PRIVATE ${Boost_LIBRARIES})
+
+target_include_directories(${TEST_NAME} PRIVATE ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(${TEST_NAME} PRIVATE ${OpenCV_LIBRARIES})
+
 target_compile_options(${TEST_NAME} PRIVATE -g -O0 -fprofile-arcs -ftest-coverage)
-target_link_libraries(${TEST_NAME} gtest gmock gmock_main gcov)
+target_link_libraries(${TEST_NAME} PRIVATE gtest gmock gmock_main gcov)
 
 set_property(TARGET ${TEST_NAME} PROPERTY CXX_STANDARD 20)
 set_property(TARGET ${TEST_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)

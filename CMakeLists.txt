@@ -7,6 +7,7 @@ enable_testing()
 add_subdirectory(extern/googletest-1.11.0)
 
 find_package(Boost REQUIRED)
+find_package(OpenCV REQUIRED)
 
 add_subdirectory(test)
 add_test(test1 test/test1)
