@@ -1,6 +1,6 @@
 # C++ Boilerplate
 
-C++ Boilerplate using CMake, Boost, OpenCV, Gcov, LCOV and GTest
+C++ Boilerplate using CMake, Boost, OpenCV, Gcov, LCOV, Cppcheck and GTest
 
 ## Requirement
 
@@ -9,11 +9,12 @@ C++ Boilerplate using CMake, Boost, OpenCV, Gcov, LCOV and GTest
 - OpenCV (4.2.0)
 - g++/Gcov (9.4.0)
 - LCOV (1.14)
+- Cppcheck (1.90)
 - GTest (1.11.0)
 - Ninja (1.10.0)
 
 ```shell
-sudo apt install build-essential libboost-all-dev libopencv-dev cmake ninja-build lcov
+sudo apt install build-essential libboost-all-dev libopencv-dev cmake ninja-build lcov cppcheck
 ```
 
 ## Generate
