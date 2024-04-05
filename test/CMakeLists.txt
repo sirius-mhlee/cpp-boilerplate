@@ -15,9 +15,9 @@ set_property(TARGET ${TEST_NAME} PROPERTY CXX_STANDARD 20)
 set_property(TARGET ${TEST_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 
 add_custom_target(${TEST_NAME}_cov
-    COMMAND lcov --rc lcov_branch_coverage=1 -c -d . -o tmp.info
-    COMMAND lcov --rc lcov_branch_coverage=1 --remove tmp.info '/usr/include/*' '*/extern/*' -o ${TEST_NAME}.info
-    COMMAND genhtml ${TEST_NAME}.info --branch-coverage -o report
+    COMMAND mkdir -p report/${TEST_NAME}
+    COMMAND gcovr --root ${CMAKE_SOURCE_DIR} --html-nested report/${TEST_NAME}/coverage.html --exclude '${CMAKE_SOURCE_DIR}/extern/' --exclude '${CMAKE_SOURCE_DIR}/test/' --exclude-throw-branches
     COMMAND rm -rf ${CMAKE_SOURCE_DIR}/coverage/${TEST_NAME}
     COMMAND mkdir -p ${CMAKE_SOURCE_DIR}/coverage/${TEST_NAME}
-    COMMAND mv report/* ${CMAKE_SOURCE_DIR}/coverage/${TEST_NAME})
+    COMMAND mv report/${TEST_NAME}/* ${CMAKE_SOURCE_DIR}/coverage/${TEST_NAME}
+    COMMAND rm -rf report/${TEST_NAME})
