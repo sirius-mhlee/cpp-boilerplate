@@ -8,6 +8,9 @@ target_link_libraries(${APP_NAME} PRIVATE ${Boost_LIBRARIES})
 target_include_directories(${APP_NAME} PRIVATE ${OpenCV_INCLUDE_DIRS})
 target_link_libraries(${APP_NAME} PRIVATE ${OpenCV_LIBRARIES})
 
+target_compile_options(${APP_NAME} PRIVATE -fsanitize=address -fno-omit-frame-pointer)
+target_link_options(${APP_NAME} PRIVATE -fsanitize=address)
+
 set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD 20)
 set_property(TARGET ${APP_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 set_property(TARGET ${APP_NAME} PROPERTY CXX_CPPCHECK cppcheck --std=c++20 --quiet --enable=all --suppressions-list=${CMAKE_SOURCE_DIR}/.cppcheck-suppressions-list)
